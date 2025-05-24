@@ -1,4 +1,4 @@
-# <img src="https://nezha.wiki/logo.png" alt="Nezha Logo" width="32" height="32" /> 哪吒监控Box（Nezha Monitor Box）
+# <img src="https://nezha.wiki/logo.png" alt="Nezha Logo" width="32" height="32" /> 哪吒Box（Nezha Box）
 
 🚀 一个在线配置文件生成器，专为 [哪吒监控 V1] 设计，帮助用户图形化生成 `json` 配置文件，摆脱手动编辑 JSON 的繁琐！
 
