@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>哪吒监控Box</title>
+	<meta name="description" content="哪吒监控Box 是一个专为哪吒监控 V1 打造的在线 JSON 配置生成工具，支持图形化操作、实时预览与导出功能，帮助用户快速生成标准配置文件，无需手动编辑，适合新手用户与运维团队使用。">
+	<meta name="keywords" content="哪吒监控, Nezha Monitor, JSON 配置生成器, 哪吒配置工具, 运维工具, 在线配置生成, Nezha 监控配置, 配置文件生成, 面板部署简化, 服务器监控配置">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- 顶部导航栏 -->
+    <header class="bg-gray-900 text-white shadow">
+      <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        <!-- 左侧 logo + 标题 -->
+        <div class="flex items-center space-x-2">
+          <img
+            class="VPImage logo"
+            src="https://nezha.wiki/logo.png"
+            width="24"
+            height="24"
+            alt="NezhaLogo"
+            data-v-8426fc1a=""
+          />
+          <h1 class="text-xl font-semibold">哪吒监控Box</h1>
+        </div>
+    
+        <!-- 右侧导航 -->
+        <nav class="flex space-x-6 text-sm">
+          <a href="#intro" class="hover:text-blue-400">简介</a>
+          <a href="#Features" class="hover:text-blue-400">特点</a>
+          <a href="#Scene" class="hover:text-blue-400">客户端</a>
+          <a href="#faq" class="hover:text-blue-400">FAQ</a>
+          <a href="//www.nodeseek.com/" target="_blank" class="hover:text-blue-400">NodeSeek</a>
+        </nav>
+      </div>
+    </header>
+
+
+    <!-- 主内容区域 -->
+    <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
+      <!-- 简介 -->
+      <section id="intro">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🚀 项目简介</h2>
+        <p class="text-gray-700 leading-relaxed">
+          哪吒BOX 是一款为哪吒监控 V1 提供的在线 JSON 配置文件生成工具。<br/>
+          无需手动编辑复杂的 JSON 配置，只需填写或选择配置项，即可一键生成正确格式的配置文件，极大简化了部署流程。
+        </p>
+      </section>
+
+      <!-- 特点 -->
+      <section id="Features">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">📦 核心特点</h2>
+        <pre class="bg-gray-100 p-4 rounded overflow-x-auto text-sm text-gray-800">
+- 🌟 图形化操作：友好的表单界面，参数说明清晰，零门槛生成 JSON 配置  
+- ⚙️ 实时预览：配置实时转化为 JSON，方便检查和复制  
+- 💾 导出配置：支持一键复制和保存配置文件  
+- 🔒 安全可靠：内置参数校验，避免因格式错误导致面板启动失败  
+- 🌐 在线工具：无需安装，打开浏览器即可使用</pre>
+      </section>
+
+      <!-- 场景 -->
+      <section id="Scene">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">🖥 食用场景</h2>
+        <ul class="list-disc ml-6 text-gray-700">
+          <li>- 新手用户快速完成哪吒监控配置</li>
+          <li>- 大量服务器批量生成配置文件</li>
+          <li>- 运维团队标准化配置流程</li>
+        </ul>
+		<a href="/Config/v1json.html"
+		   class="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+		   target="_blank" rel="noopener noreferrer">
+		  前往配置生成器
+		</a>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">❓ 常见问题</h2>
+        <p class="text-gray-700">Q：我们是不是哪吒(NeZha)官方人员？<br/>A：不是，我只是一个小白，属于是懒得手写配置，弄个生成器。</p>
+		<br/>
+		<p class="text-gray-700">Q：会有病毒或者后门吗？<br/>A：不会，代码就是HTML的，不放心自己看就好。</p>
+      </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="text-center text-sm text-gray-500 py-8">
+      &copy; <span id="year"></span> CN-Root 所有。文档由社区维护 | 
+      <a href="https://nezha.wiki" target="_blank" class="text-blue-500 hover:underline">nezha.wiki</a> | 
+      <a href="https://github.com/CN-Root" class="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">GitHub - CN-Root</a>
+    </footer>
+    
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+  </body>
+</html>

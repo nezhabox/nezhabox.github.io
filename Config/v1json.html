@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>哪吒 V1 JSON 生成器</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; }
+    .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; }
+    label { display: block; margin-top: 15px; font-weight: bold; }
+    input, select, textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+    button { margin-top: 20px; padding: 10px 15px; background: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    pre { background: #eee; padding: 10px; border-radius: 4px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>哪吒 V1 JSON 配置生成器</h1>
+    <form id="jsonForm">
+      <label>开始时间（ISO 8601 格式）</label>
+      <input type="text" id="startDate" value="2025-05-01T00:00:00Z">
+
+      <label>到期时间</label>
+      <input type="text" id="endDate" value="2026-05-01T00:00:00Z">
+
+      <label>价格</label>
+      <input type="text" id="amount" value="120USD">
+
+      <label>计费周期</label>
+      <select id="cycle">
+        <option value="Month">月付</option>
+        <option value="Year" selected>年付</option>
+      </select>
+
+      <label>支付方式</label>
+      <input type="text" id="paymentMethod" value="Crypto">
+
+      <label>是否自动续费</label>
+      <select id="autoRenewal">
+        <option value="1" selected>是</option>
+        <option value="0">否</option>
+      </select>
+
+      <label>带宽速率</label>
+      <input type="text" id="bandwidth" value="100Mbps">
+
+      <label>每月流量</label>
+      <input type="text" id="trafficVol" value="2TB/Month">
+
+      <label>流量计费类型</label>
+      <select id="trafficType">
+        <option value="1">入站</option>
+        <option value="2" selected>出站</option>
+        <option value="3">双向</option>
+      </select>
+
+      <label>IPv4 支持</label>
+      <select id="ipv4">
+        <option value="1" selected>有</option>
+        <option value="0">无</option>
+      </select>
+
+      <label>IPv6 支持</label>
+      <select id="ipv6">
+        <option value="1">有</option>
+        <option value="0" selected>无</option>
+      </select>
+
+      <label>网络线路（如 CN2, 4837）</label>
+      <input type="text" id="networkRoute" value="CN2">
+
+      <label>额外备注</label>
+      <input type="text" id="extra" value="东京CN2 GIA">
+
+      <button type="button" onclick="generateJSON()">生成 JSON</button>
+    </form>
+
+    <h2>生成结果</h2>
+    <pre id="output"></pre>
+  </div>
+
+  <script>
+    function generateJSON() {
+      const json = {
+        billingDataMod: {
+          startDate: document.getElementById('startDate').value,
+          endDate: document.getElementById('endDate').value,
+          autoRenewal: document.getElementById('autoRenewal').value,
+          cycle: document.getElementById('cycle').value,
+          amount: document.getElementById('amount').value,
+          paymentMethod: document.getElementById('paymentMethod').value
+        },
+        planDataMod: {
+          bandwidth: document.getElementById('bandwidth').value,
+          trafficVol: document.getElementById('trafficVol').value,
+          trafficType: document.getElementById('trafficType').value,
+          IPv4: document.getElementById('ipv4').value,
+          IPv6: document.getElementById('ipv6').value,
+          networkRoute: document.getElementById('networkRoute').value,
+          extra: document.getElementById('extra').value
+        }
+      };
+      document.getElementById('output').textContent = JSON.stringify(json, null, 2);
+    }
+  </script>
+</body>
+</html>
